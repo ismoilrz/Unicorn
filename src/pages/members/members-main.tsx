@@ -14,10 +14,8 @@ interface MembersMainProps {
 const MembersMain: React.FC<MembersMainProps> = ({ searchTerm, statusFilter }) => {
     const { data, isLoading, isError } = useGet<Product[]>('unicorn', 'users')
     
-    // 1. remove
     const { mutate: deleteMember } = useDelete('unicorn', 'users');
 
-    // 2. Edit 
     const [editOpen, setEditOpen] = useState<boolean>(false)
     const [selectedUser, setSelectedUser] = useState<Product | null>(null) 
 
@@ -47,7 +45,7 @@ const MembersMain: React.FC<MembersMainProps> = ({ searchTerm, statusFilter }) =
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '250px' }}>
           <Spin indicator={<Loading3QuartersOutlined style={{ fontSize: 48, color: '#9B74F0' }} spin />} />
         </div>
-  );
+      );
     }
     if (isError) return <h2>Xatolik</h2>
     
@@ -121,7 +119,8 @@ const MembersMain: React.FC<MembersMainProps> = ({ searchTerm, statusFilter }) =
     const tableData = data
         ?.filter((item) => {
             const matchesSearch = 
-            item.memName.toLowerCase().includes(searchTerm.toLowerCase()) || item.memPhone.includes(searchTerm);
+                (item.memName || "").toLowerCase().includes(searchTerm.toLowerCase()) || 
+                String(item.memPhone || "").includes(searchTerm);
             
             const matchesStatus = statusFilter === null ? true : item.memStatus === statusFilter;
 

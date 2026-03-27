@@ -5,7 +5,7 @@ import type { Product } from "../../types/types";
 import { SearchOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import Skeleton from "../../components/Loading/loading";
-import { Badge, message } from "antd"; // Badge va message qo'shildi
+import { Badge, message } from "antd"; 
 
 // cart uchun interface
 interface CartItem extends Product {
@@ -15,16 +15,12 @@ interface CartItem extends Product {
 const Pos = () => {
   const { t } = useTranslation();
   
-  // Savat (cart) uchun state
   const [cart, setCart] = useState<CartItem[]>([]);
-  // Panelni ochish/yopish state-i
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
-  // Search uchun state
   const [searchText, setSearchText] = useState<string>('');
 
   const { data = [], isLoading, isError } = useGet<Product[]>('unicorn', 'products');
 
-  // Savatga qo'shish funksiyasi (Takrorlanishni oldini oladi)
   const addToCart = (product: Product) => {
     setCart(prev => {
       const existingItem = prev.find(item => item.id === product.id);
@@ -38,28 +34,24 @@ const Pos = () => {
     message.success(`${product.posTitle} ${t('addedToCart') || 'savatga qo\'shildi'}`);
   };
 
-  // Miqdorni oshirish
   const increaseQty = (id: string) => {
     setCart(prev => prev.map(p => p.id === id ? { ...p, qty: p.qty + 1 } : p));
   };
 
-  // Miqdorni kamaytirish
   const decreaseQty = (id: string) => {
     setCart(prev =>
       prev.map(p => p.id === id ? { ...p, qty: p.qty - 1 } : p).filter(p => p.qty > 0)
     );
   };
 
-  // Qidiruv filtri
   const filteredData = data.filter(item =>
-    item.posTitle?.toLowerCase().includes(searchText.toLowerCase())
+    (item.posTitle || '').toLowerCase().includes(searchText.toLowerCase())
   );
 
-  // Umumiy summa va mahsulotlar soni
-  const total = cart.reduce((sum, item) => sum + item.posQuality * item.qty, 0);
-  const totalItems = cart.reduce((sum, item) => sum + item.qty, 0); // Badge uchun
+  // XATO TUZATILDI: Number() orqali TS2362 xatosi hal qilindi
+  const total = cart.reduce((sum, item) => sum + Number(item.posQuality || 0) * item.qty, 0);
+  const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
 
-  // Loading holati
   if (isLoading) {
     return (
       <>
@@ -85,13 +77,12 @@ const Pos = () => {
           <SearchOutlined style={{ marginLeft: '10px', fontSize: '18px', color: '#9B74F0' }} />
           <input
             type="text"
-            placeholder={t('searchMember')}
+            placeholder={t('searchMember') || 'Search...'}
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
         </div>
 
-        {/* NOTIFICATION BADGE QO'SHILGAN QISMI */}
         <Badge count={totalItems} offset={[-30, 40]} showZero={false} color="red" >
           <button className="chart" onClick={() => setIsCartOpen(true)}>
             🛒
@@ -111,7 +102,6 @@ const Pos = () => {
           </div>
         ))}
 
-        {/* Savat Paneli */}
         {isCartOpen && (
           <>
             <div className="overlay" onClick={() => setIsCartOpen(false)}></div>

@@ -1,13 +1,13 @@
 import { Drawer, Radio, message } from 'antd'
 import './editUser.css'
 import React, { useEffect, useState } from 'react';
-import { Product } from '../../types/types';
-import { usePut } from '../../hooks/hooks'; // usePut hookini import qilamiz
+import type { Product } from '../../types/types';
+import { usePut } from '../../hooks/hooks'; 
 
 type EditProps = {
     editOpen: boolean,
     editClose: () => void,
-    initialData: Product | null, // Tanlangan foydalanuvchi ma'lumotlari
+    initialData: Product | null, 
 }
 
 const labelStyle: React.CSSProperties = {
@@ -16,22 +16,19 @@ const labelStyle: React.CSSProperties = {
 };
 
 const EditUser = ({ editOpen, editClose, initialData }: EditProps) => {
-    // Form statelari
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [time, setTime] = useState('');
     const [valueType, setValueType] = useState<number>(1);
     const [valueStatus, setValueStatus] = useState<number>(1);
 
-    // usePut hookidan updateMember funksiyasini olamiz
     const { mutate: updateMember, isPending } = usePut('unicorn', 'users');
 
-    // Har gal initialData o'zgarganda (ya'ni Edit tugmasi bosilganda) inputlarni to'ldiramiz
     useEffect(() => {
         if (initialData) {
-            setName(initialData.memName);
-            setPhone(initialData.memPhone);
-            setTime(initialData.memTime);
+            setName(String(initialData.memName || ''));
+            setPhone(String(initialData.memPhone || ''));
+            setTime(String(initialData.memTime || ''));
             setValueType(initialData.memType?.toLowerCase() === 'male' ? 1 : 2);
             setValueStatus(initialData.memStatus ? 1 : 2);
         }
