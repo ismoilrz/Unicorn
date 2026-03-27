@@ -1,0 +1,234 @@
+.pos-search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 94px 26px;
+    margin-inline: 60px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 424px;
+    border-radius: 14px;
+    background-color: #343743 !important;
+}
+.search img{
+    margin-left: 10px;
+}
+.input{
+    background-color: #343743 !important;
+    border: none !important;
+    border-radius: 14px !important;
+    color: #999 !important;
+    margin-right: 600px !important;
+    padding: 10px 16px !important;
+    
+    outline: none !important;
+}
+.input::placeholder{
+    color: #999 !important;
+}
+.pos-search button{
+    background-color: transparent!important;
+    border: none !important;
+    border-radius: 14px !important;
+    color: white !important;
+    width: 100px !important;
+    height: 100px;
+    padding: 10px 16px !important;
+}
+.pos-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-inline: 60px;
+}
+.product-card{
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+    width: 245px;
+    height: 270px;
+    border-radius: 20px;
+    background-color: #343743 !important;
+}
+.product-card img{
+    width: 98%;
+    height: 131px;
+    padding: 10px;
+    margin-top: 2px;
+    border-radius: 24px;
+    margin-inline: auto;
+}
+.product-card h3{
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.product-card p{
+    color: #999;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.product-card button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+    background-color: #272A30 !important;
+    border: none !important;
+    border-radius: 14px !important;
+    color: white !important;
+    width: 220px !important;
+    height: 40px;
+    padding: 10px 16px !important;
+    margin-left: 10px;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+.product-card button img{
+    width: 16px;
+    margin-bottom: -20px;
+    height: 16px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+.ant-scroll-number{
+    border: none !important;
+    background-color: red !important;
+}
+.sale-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    animation: slideIn 0.3s ease-out;
+    height: 100vh;
+    background-color: #343743;
+    color: white;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    z-index: 1000;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sale-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 60px;
+    background-color: #272A30;
+    border-radius: 8px;
+}
+
+.sale-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.info {
+    flex: 1;
+}
+
+.info b {
+    display: block;
+    font-size: 14px;
+    color: white;
+}
+
+.info p {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+.qty {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.qty button {
+    background-color: #9B74F0;
+    border: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.qty span {
+    min-width: 20px;
+    text-align: center;
+    color: white;
+}
+
+.total {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #9B74F0;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.skInput{
+    width: 400px;
+    height: 45px;
+    border-radius: 20px;
+    background-color: rgb(35, 35, 35);
+}
+
+.skBtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(35, 35, 35);
+    margin-right: 20px;
+}

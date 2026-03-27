@@ -1,0 +1,457 @@
+/* .css-13cymwt-control */
+.css-13cymwt-control {
+    background-color: var(--sidebar-1) !important;
+    border: none !important;
+    /* height: 40px; */
+    color: white;
+
+}
+.css-13cymwt-control:focus{
+    background-color: var(--sidebar-1) !important;
+    border: none !important;
+    /* height: 40px; */
+}
+.css-1xc3v61-indicatorContainer{
+    display: none;
+}
+.bar{
+    display: flex;
+    /* padding-left: 922px; */
+    position: absolute;
+    left: 1262px;
+    align-items: center;
+    gap: 26px;
+    margin-top: 26px;
+}
+
+.profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.settings {
+    position: relative;
+    cursor: pointer;
+}
+
+.settings-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 470px;
+    margin-top: 50px;
+    background-color: var(--sidebar-1);
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    min-width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 0.3s ease-out;
+    overflow: hidden;
+}
+
+.settings-dropdown .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.settings-dropdown .settings-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.settings-dropdown .settings-header button {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.settings-dropdown .settings-header button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.settings-dropdown .settings-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.settings-dropdown .settings-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.settings-dropdown .settings-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: #667eea;
+    transform: translateX(4px);
+}
+
+.settings-dropdown .settings-item .icon {
+    font-size: 20px;
+    min-width: 28px;
+}
+
+.settings-dropdown .settings-item .setting-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.settings-dropdown .settings-item .label {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.settings-dropdown .settings-item .description {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+}
+
+.settings-dropdown .settings-item .arrow {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.settings-dropdown .settings-item:hover .arrow {
+    color: #667eea;
+}
+
+.change-password-form {
+    padding: 20px 0;
+}
+
+.change-password-form .back-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 0;
+    transition: color 0.2s ease;
+    display: block;
+}
+
+.change-password-form .back-btn:hover {
+    color: white;
+}
+
+.change-password-form h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.change-password-form .form-group {
+    margin-bottom: 15px;
+}
+
+.change-password-form .form-group label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.change-password-form .form-group input {
+    width: 300px;
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.change-password-form .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.change-password-form .form-group input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.change-password-form .message {
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+.change-password-form .message.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.change-password-form .message.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+    border: 1px solid rgba(244, 67, 54, 0.4);
+}
+
+.change-password-form .submit-btn {
+    width: 100%;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.change-password-form .submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+.back-btn{
+   margin: 10px;
+}
+.change-password-form .submit-btn:active {
+    transform: translateY(0);
+}
+.profile img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 470px;
+    margin-top: 50px;
+    background-color: var(--sidebar-1);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    min-width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 0.3s ease-out;
+    overflow: hidden;
+}
+
+.profile-dropdown .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.profile-dropdown .profile-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-dropdown .profile-header button {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.profile-dropdown .profile-header button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.profile-dropdown .profile-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-dropdown .profile-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-dropdown .profile-image-section .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #667eea;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.profile-dropdown .profile-image-section .profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+.profile-dropdown .profile-image-section h4 {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-dropdown .profile-image-section p {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.profile-dropdown .profile-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid #667eea;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-dropdown .profile-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.profile-dropdown .profile-item .label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-dropdown .profile-item .value {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.profile-dropdown .logout-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #f44336 0%, #e53935 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.profile-dropdown .logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+}
+
+.profile-dropdown .logout-btn:active {
+    transform: translateY(0);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+.submit-btn {
+    width: 200px !important;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 400px;
+    margin-right: 348px;
+    /* display: flex; */
+    /* align-items: center; */
+    position: absolute;
+    /* top: 200px; */
+    /* bottom: 0; */
+   
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
