@@ -95,7 +95,7 @@ const Bar = () => {
                  <LangSelect />
                </div>
                <div className="settings" onClick={toggleSettings}>
-                    <img src="./public/settings.png" alt="settings" />
+                    <img src="/settings.png" alt="settings" />
                     {isSettingsOpen && (
                         <div className="settings-dropdown" onClick={(e) => e.stopPropagation()}>
                             {!showChangePassword ? (
@@ -192,7 +192,7 @@ const Bar = () => {
                     )}
                </div>
                <div className="profile" onClick={toggleProfile}>
-                <img src="./public/photo.jpg" alt="profile" />
+                <img src="/photo.jpg" alt="profile" />
                  {isProfileOpen && (
                     <div className="profile-dropdown" onClick={(e) => e.stopPropagation()}>
                         <div className="profile-header">
